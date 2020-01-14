@@ -1,3 +1,4 @@
+# https://leetcode-cn.com/problems/reverse-integer/solution/
 class Solution:
     def reverse(self, x: int) -> int:
         x = str(x)
@@ -7,7 +8,7 @@ class Solution:
         if -2147483648 < result < 2147483647:
             return result
         else:
-            return 0  
+            return 0
 
 
 if __name__ == "__main__":
