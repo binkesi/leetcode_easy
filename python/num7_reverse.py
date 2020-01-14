@@ -10,6 +10,19 @@ class Solution:
         else:
             return 0
 
+    def reverse_v2(self, x: int) -> int:
+        y, res = abs(x), 0
+        boundary =(1 << 31) - 1 if x > 0 else 1 << 31
+        while y != 0:
+            res = res * 10 + y % 10
+            y //= 10
+        if res > boundary:
+            return 0
+        if x > 0:
+            return res
+        else:
+            return -res
+
 
 if __name__ == "__main__":
     solu = Solution()
