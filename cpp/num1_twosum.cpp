@@ -1,6 +1,7 @@
 #include<unordered_map>
 #include<vector>
-using namspace std;
+#include<iostream>
+using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -15,4 +16,12 @@ public:
         }
         return {-1, -1};
     }
+};
+
+int main(){
+    vector<int> nums = {1, 4, 7, 9, 12, 3, 2};
+    int target = 11;
+    Solution solu;
+    vector<int> result = solu.twoSum(nums, target);
+    cout << "[" << result[0] << ", " << result[1] << "]" << endl;
 };
