@@ -25,10 +25,25 @@ public:
         if(x == res) return true;
         else return false;
     }
+    
+    bool isPalindrome_half(int x){
+        if(x < 0) return false;
+        if(x == 0) return true;
+        if(x % 10 == 0) return false;        
+        int res = 0;
+        int y = x;
+        while (y > res){
+            res = res * 10 + y % 10;
+            y /= 10;
+        }
+        if (y == res || y == res/10) return true;
+        else return false;
+    }
 };
 
 int main(){
     Solution solu;
     cout << solu.isPalindrome(1234321) << endl;
-    cout << solu.isPalindrome_nostr(1234321) << endl;    
+    cout << solu.isPalindrome_nostr(100) << endl;
+    cout << solu.isPalindrome_half(100) << endl;    
 }
