@@ -20,12 +20,14 @@ public:
                 s = s.erase(0, 1);
             }           
             auto iter = a.end()-1;
-            if (par[*iter] == s[0]) a.pop_back();
-            else {
+            if (par.find(*iter) != par.end() && par[*iter] == s[0]) {
+                a.pop_back();
                 s = s.erase(0, 1);
-                a.push_back(s[0]);
             }
-            cout << *iter << endl;
+            else {
+                a.push_back(s[0]);                
+                s = s.erase(0, 1);
+            }
         }
         if (a.empty() == true) return true;
         else return false;
@@ -35,5 +37,7 @@ public:
 int main(){
     Solution solu;
     string s("()[]{}");
+    string s1("");
+    cout << s1[0] << endl;
     cout << solu.isValid(s) << endl;
 }
