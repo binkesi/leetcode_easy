@@ -2,8 +2,6 @@
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
         s = s.rstrip()
-        print(s)
-        print(s[-1])
         if s is None:
             return 0
         for i in s[::-1]:
