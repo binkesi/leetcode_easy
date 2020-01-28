@@ -1,6 +1,6 @@
 // https://leetcode-cn.com/problems/plus-one/
-#include <iostream>
-#include <vector>
+#include<iostream>
+#include<vector>
 using namespace std;
 class Solution {
 public:
@@ -21,5 +21,7 @@ public:
 int main(){
     vector<int> digits = {4, 3, 2, 3};
     Solution solu;
-    cout << solu.plusOne(digits) << endl;
+    auto result = solu.plusOne(digits);
+    for(auto iter = result.begin(); iter != result.end(); ++iter) cout << *iter << ", ";
+    cout << endl;
 }
