@@ -47,7 +47,19 @@ public:
             if (!isReverse(valueQueue)) return false;
         }
         return true;        
-    }   
+    }
+
+    bool isSymmetric_a(TreeNode* root){
+        if (root == NULL) return true;
+        return isMirror(root -> left, root -> right); 
+    }
+
+    bool isMirror(TreeNode* left, TreeNode* right){
+        if(left == NULL && right == NULL) return true;
+        if(left == NULL || right == NULL) return false;
+        if(left -> val != right -> val) return false;
+        else return (isMirror(left -> left, right -> right) && isMirror(left -> right, right -> left));
+    }
 };
 
 int main(){
