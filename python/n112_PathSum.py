@@ -14,7 +14,7 @@ class Solution:
             return sum == 0
         return self.hasPathSum(root.left, sum) or self.hasPathSum(root.right, sum)
 
-    def hasPathSum(self, root: TreeNode, sum: int) -> bool:
+    def hasPathSum_dfs(self, root: TreeNode, sum: int) -> bool:
         print(self.dfs_search(root))
         if sum in self.dfs_search(root):
             return True
