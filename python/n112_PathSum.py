@@ -27,13 +27,17 @@ class Solution:
         sum = 0
         while node_stack != [] or p is not None:           
             while p is not None: 
-                node_stack.append(p)
-                sum += p.val                
+                sum += p.val
+                node_stack.append((p, sum))                              
                 p = p.left
             p = node_stack.pop()
-            sum -= p.val
-            if p.left is None and p.right is None:
-                path_sum.append(sum + p.val)          
-            p = p.right
+            if p[0].left is None and p[0].right is None:
+                path_sum.append(sum) 
+            sum = p[1]                
+            p = p[0].right
         return path_sum
+        
+        
+if __name__ == "__main__":
+    pass
             
