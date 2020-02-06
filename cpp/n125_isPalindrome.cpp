@@ -20,6 +20,14 @@ public:
         if (s == tmp) return true;
         else return false;        
     }
+    
+    bool isPalindrome_a(string s) {
+        string str = "";
+        for(auto c: s) if(isalnum(c)) str += tolower(c);
+        for(int i=0, m=str.size(); i<m/2; ++i)
+            if(str[i] != str[m-1-i]) return false;
+        return true;
+    }
 };
 
 int main(){
