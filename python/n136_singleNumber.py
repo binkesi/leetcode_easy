@@ -18,6 +18,11 @@ class Solution:
                 cur_num[i] = 1
         return cur_num.popitem()[0]
             
+    def singleNumber_b(self, nums) -> int:
+        a = 0
+        for i in nums:
+            a = i ^ a
+        return a
         
         
 if __name__ == "__main__":
