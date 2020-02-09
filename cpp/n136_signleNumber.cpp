@@ -19,6 +19,14 @@ public:
         it=a.begin();
         return it->first;
     }
+    
+    int singleNumber_a(vector<int>& nums){
+        int num = nums[0];
+        for (size_t i = 1; i < nums.size(); ++i){
+            num = num ^ nums[i];
+        }
+        return num;
+    }
 };
 
 int main(){
