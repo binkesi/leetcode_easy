@@ -2,6 +2,7 @@
 // Definition for singly-linked list.
 #include <iostream>
 #include <vector>
+#include <map>
 using namespace std;
 
 struct ListNode {
@@ -22,6 +23,22 @@ public:
             else p_b = p_b -> next;
         }
         return p_a;
+    }
+    
+    ListNode *getIntersectionNode_a(ListNode *headA, ListNode *headB) {
+        ListNode* p_a = headA;
+        ListNode* p_b = headB;
+        map <ListNode*, bool> node_map;
+        while(p_a != NULL){
+            node_map.insert(pair<ListNode*, bool>(p_a, true));
+            p_a = p_a -> next;
+        }
+        while(p_b != NULL){
+            auto iter = node_map.find(p_b);
+            if (iter != node_map.end()) return p_b;
+            p_b = p_b -> next;
+        }
+        return NULL;
     }
 };
 
