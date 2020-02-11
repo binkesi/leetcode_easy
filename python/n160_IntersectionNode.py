@@ -19,7 +19,20 @@ class Solution:
                 p_b = p_b.next
             else: p_b = headA
         return p_a
-        
+    
+    def getIntersectionNode_a(self, headA: ListNode, headB: ListNode) -> ListNode:
+        node_map = {}
+        if headA is None or headB is None:
+            return None
+        p_a = headA
+        p_b = headB
+        while p_a is not None:
+            node_map[p_a] = True
+            p_a = p_a.next
+        while p_b is not None:
+            if p_b in node_map:
+                return p_b
+            p_b = p_b.next
 
 if __name__ == "__main__":
     pass
