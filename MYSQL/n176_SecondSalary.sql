@@ -1,3 +1,5 @@
+# https://leetcode-cn.com/problems/second-highest-salary/
+
 SELECT
     IFNULL(
     (SELECT DISTINCT Salary
