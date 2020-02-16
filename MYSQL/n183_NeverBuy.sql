@@ -13,3 +13,15 @@ WHERE
         Orders
     );
 
+
+select
+    Customers.Name as "Customers"
+from
+    Customers
+left join 
+    Orders as b
+on 
+    Customers.Id = b.CustomerId
+where
+    b.CustomerId is null;
+
