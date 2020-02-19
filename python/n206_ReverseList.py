@@ -16,6 +16,13 @@ class Solution:
             tmp.next = pre
             pre = tmp
         return pre
+        
+    def reverseList_a(self, head: ListNode) -> ListNode:
+        if head is None or head.next is None: return head
+        p = self.reverseList_a(head.next)
+        head.next.next = head
+        head.next = None
+        return p
 
 
 if __name__ == "__main__":
