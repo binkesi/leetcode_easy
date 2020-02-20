@@ -22,6 +22,18 @@ public:
         head -> next = NULL;
         return p;
     }
+    
+    ListNode* reverseList_a(ListNode* head){
+        ListNode* pre = NULL;
+        ListNode* cur = head;
+        while (cur != NULL){
+            ListNode* tmp = cur;
+            cur = cur -> next;
+            tmp -> next = pre;
+            pre = tmp;
+        }
+        return pre;
+    }
 };
 
 int main(){
