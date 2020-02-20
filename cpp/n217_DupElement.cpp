@@ -20,6 +20,15 @@ public:
         set<int> num_set(nums.begin(), nums.end());
         return (num_set.size() != nums.size());
     }
+    
+    bool containsDuplicate_b(vector<int>& nums){
+        if (nums.empty()) return false;
+        sort(nums.begin(), nums.end());
+        for (size_t i = 0; i < nums.size()-1; ++i){
+            if (nums[i] == nums[i+1]) return true;
+        }
+        return false;
+    }
 };
 
 int main(){
