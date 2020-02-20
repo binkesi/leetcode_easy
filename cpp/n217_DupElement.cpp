@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <map>
+#include <set>
 using namespace std;
 
 class Solution{
@@ -13,6 +14,11 @@ public:
             num_map.insert(pair<int, int>(nums[i], i));
         }
         return (num_map.size() != nums.size());
+    }
+    
+    bool containsDuplicate_a(vector<int>& nums){
+        set<int> num_set(nums.begin(), nums.end());
+        return (num_set.size() != nums.size());
     }
 };
 
