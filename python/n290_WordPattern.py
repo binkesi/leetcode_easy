@@ -13,6 +13,10 @@ class Solution:
             elif str_dict[pattern[i]] != strs[i]:
                 return False
         return True
+        
+    def wordPattern_a(self, pattern: str, str: str) -> bool:
+        strs = str.split(" ")
+        return list(map(pattern.index, pattern)) == list(map(strs.index, strs))
 
 
 if __name__ == "__main__":
@@ -20,3 +24,4 @@ if __name__ == "__main__":
     pattern = "abba"
     str = "dog dog dog dog"
     print(solu.wordPattern(pattern, str))
+    print(solu.wordPattern_a(pattern, str))
