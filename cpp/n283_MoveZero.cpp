@@ -19,6 +19,16 @@ public:
             }
         }
     }
+    
+    void moveZeroes_a(vector<int>& nums) {
+        int last_not_zero = 0;
+        for (size_t i = 0; i < nums.size(); ++i){
+            if (nums[i] != 0){
+                swap(last_not_zero, i, nums);
+                last_not_zero += 1;
+            }
+        }
+    }
 };
 
 int main(){
