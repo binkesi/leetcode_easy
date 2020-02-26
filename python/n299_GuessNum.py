@@ -20,11 +20,11 @@ class Solution:
                     
         res = str(num_a) + "A" + str(num_b) + "B"
         return res
-        
+               
         
 if __name__ == "__main__":
     solu = Solution()
-    secret = "19487290"
-    guess = "29065513"
+    secret = "1807"
+    guess = "7810"
     print(solu.getHint(secret, guess))
                 
