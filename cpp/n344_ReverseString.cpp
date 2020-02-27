@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string>
 #include <unordered_map>
+#include <algorithm>
 using namespace std;
 
 class Solution {
@@ -19,6 +20,10 @@ public:
             tail -= 1;
         }
     }
+    
+    void reverseString_a(vector<char>& s) {
+        reverse(s.begin(), s.end());
+    }
 };
 
 int main(){
@@ -26,4 +31,8 @@ int main(){
     vector<char> s = {'h','e','l','l','o'};
     solu.reverseString(s);
     for (size_t i = 0; i < s.size(); ++i) cout << s[i] << " ";
+    cout << endl;
+    solu.reverseString_a(s);
+    for (size_t i = 0; i < s.size(); ++i) cout << s[i] << " ";    
+    cout << endl;    
 }
