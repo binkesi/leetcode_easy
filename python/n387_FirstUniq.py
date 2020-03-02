@@ -12,8 +12,20 @@ class Solution:
         else:
             return index_list[0]
             
+    def firstUniqChar_a(self, s: str) -> int:
+        index_map = {}
+        for i, j in enumerate(s):
+            if j not in index_map.keys():
+                index_map[j] = 1
+            else:
+                index_map[j] += 1
+        for k in s:
+            if index_map[k] == 1:
+                return s.index(k)
+        return -1
+            
             
 if __name__ == "__main__":
     solu = Solution()
     s = "loveleetcode"
-    print(solu.firstUniqChar(s))
+    print(solu.firstUniqChar_a(s))
