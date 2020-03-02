@@ -18,10 +18,21 @@ public:
         }
         return -1;
     }
+    
+    int firstUniqChar_a(string s) {
+        int hash[26] = {0};
+        for (char a : s){
+            hash[a - 'a'] += 1;
+        }
+        for (int i = 0; i < s.size(); ++i){
+            if (hash[s[i] - 'a'] == 1) return i;
+        }
+        return -1;
+    }
 };
 
 int main(){
     string s = "loveleetcode";
     Solution solu;
-    cout << solu.firstUniqChar(s) << endl;
+    cout << solu.firstUniqChar_a(s) << endl;
 }
