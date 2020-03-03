@@ -12,10 +12,10 @@ public:
         int s1 = s.size();
         int s2 = t.size();
         if (s1 == 0) return true;
-        while(i <= s1){
+        while(i < s1){
             while (t[j] != s[i]){
                 j += 1;
-                if (j > s2) return false;
+                if (j >= s2) return false;
             }
             i += 1;
             j += 1;
