@@ -4,6 +4,7 @@
 #include <string>
 #include <set>
 #include <algorithm>
+#include <map>
 using namespace std;
 
 struct TreeNode {
@@ -30,7 +31,7 @@ public:
 };
 
 
-class Solution {
+class Solution_b {
     public int pathSum(TreeNode root, int sum) {
         // key是前缀和, value是大小为key的前缀和出现的次数
         Map<Integer, Integer> prefixSumCount = new HashMap<>();
@@ -78,7 +79,7 @@ class Solution {
         prefixSumCount.put(currSum, prefixSumCount.get(currSum) - 1);
         return res;
     }
-}
+};
 
 
 int main(){
