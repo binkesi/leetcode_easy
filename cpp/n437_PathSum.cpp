@@ -32,7 +32,7 @@ public:
 
 
 class Solution_b {
-    public int pathSum(TreeNode root, int sum) {
+public: int pathSum(TreeNode root, int sum) {
         // key是前缀和, value是大小为key的前缀和出现的次数
         Map<Integer, Integer> prefixSumCount = new HashMap<>();
         // 前缀和为0的一条路径
