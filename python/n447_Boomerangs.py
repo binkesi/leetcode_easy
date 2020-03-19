@@ -17,3 +17,7 @@ class Solution:
 
     def dist(self, point_a, point_b):
         return (point_a[0] - point_b[0]) ** 2 + (point_a[1] - point_b[1]) ** 2
+        
+        
+if __name__ == "__main__":
+    pass
