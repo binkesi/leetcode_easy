@@ -11,7 +11,9 @@ if __name__ == "__main__":
         'y' : 2
     }
     print(a.keys() & b.keys())
-    print(a.keys() - b.keys())    
+    print(a.keys() - b.keys())   
+    print(a.keys() | b.keys()) 
+    print(a.keys() ^ b.keys()) 
     # make new dict without several keys
     c = {key:a[key] for key in a.keys() - {'z', 'w'}}
     for key, value in c.items():
