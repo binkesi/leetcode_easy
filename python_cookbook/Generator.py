@@ -1,4 +1,5 @@
 # Determine if any .py files exist in a directory
+# try to change user
 import os
 if __name__ == "__main__":
     files = os.listdir('D:\My_pycharm_project\leetcode_easy\python')
