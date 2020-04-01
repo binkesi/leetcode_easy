@@ -1,17 +1,24 @@
 # https://leetcode-cn.com/problems/island-perimeter/
+import copy
 
 class Solution:
     def islandPerimeter(self, grid) -> int:
         wid = len(grid[0])
         high = len(grid)
         res = 0
-        i = 0
-        while i < high:
-            j = 0
-            while j < wid:
+        head_list = [0]*wid
+        grid.insert(0, head_list)
+        grid.append(head_list)
+        for li in range(high+1):           
+            grid[li].insert(0, 0)
+            grid[li].append(0)           
+        i = 1
+        while i <= high+1:
+            j = 1
+            while j <= wid+1:
                 point = (i, j)
                 if (grid[i][j] == 1): 
-                    res += self.calone(grid, point)
+                    res += self.calone_an(grid, point)
                 j += 1
             i += 1
         return res
@@ -38,6 +45,12 @@ class Solution:
         if b == high-1:
             res += 1       
         return res 
+        
+    def calone_an(self, grid, point):
+        res = 0
+        a, b = point[0], point[1]
+        res = res + (grid[a-1][b]^1) + (grid[a+1][b]^1) + (grid[a][b-1]^1) + (grid[a][b+1]^1)
+        return res
         
 
 if __name__ == "__main__":
