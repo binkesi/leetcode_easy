@@ -12,7 +12,6 @@ class Solution:
                 point = (i, j)
                 if (grid[i][j] == 1): 
                     res += self.calone(grid, point)
-                    print(i, j, self.calone(grid, point))
                 j += 1
             i += 1
         return res
