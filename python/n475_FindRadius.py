@@ -1,15 +1,32 @@
 # https://leetcode-cn.com/problems/heaters/
 class Solution:
     def findRadius(self, houses, heaters) -> int:
-        dis = []
+        houses.sort()
         heaters.sort()
-        for i in range(len(heaters)-1):
-            dis.append(heaters[i+1] - heaters[i])
-        if dis:
-            return int(max((max(dis)-1)/2, (heaters[0]-1), (houses[-1] - heaters[-1])))
-        else:
-            return int(max((heaters[0]-1), (houses[-1] - heaters[-1])))
-            
+        res = 0
+        for house in houses:
+
+            left = 0
+            right = len(heaters) - 1
+            while left < right:
+                middle = left + (right - left) // 2
+                if heaters[middle] < house:
+                    left = middle + 1
+                else:
+                    right = middle            
+            if heaters[left] == house:
+                house_res = 0
+            elif heaters[left] < house:
+                house_res = house - heaters[left]
+            else:
+                if left == 0:
+                    house_res = heaters[left] - house
+                else:
+                    house_res = min(heaters[left] - house, house - heaters[left - 1])
+            res = max(house_res, res)
+        return res
+                      
             
 if __name__ == "__main__":
-    pass
+    solu = Solution()
+    houses = []
