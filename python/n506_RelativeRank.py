@@ -12,3 +12,7 @@ class Solution:
             if res[i] == "2": res[i] = "Silver Medal"
             if res[i] == "3": res[i] = "Bronze Medal"
         return res
+        
+
+if __name__ == "__main__":
+    pass
