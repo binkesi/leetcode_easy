@@ -26,5 +26,6 @@ public:
 };
 
 int main(){
-    return 0;
+    Solution solu;
+    cout << solu.fib_a(30) << endl;
 }
