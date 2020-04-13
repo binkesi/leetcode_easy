@@ -17,6 +17,22 @@ class Solution:
             if v is None: return 0
             return calSum(v.left) + calSum(v.right) + v.val
         return abs(calSum(node.left) - calSum(node.right)) 
+        
+
+class Solution_a:
+    def __init__(self):
+        self.res = 0
+        
+    def findTilt(self, root: TreeNode):
+        self.calSum(root)
+        return self.res
+    
+    def calSum(self, node):
+        if node is None: return 0
+        l = self.calSum(node.left)
+        r = self.calSum(node.right)
+        self.res += abs(l - r)
+        return l + r + node.val        
 
 
 if __name__ == "__main__":
