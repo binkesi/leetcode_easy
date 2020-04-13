@@ -27,6 +27,12 @@ class Solution:
             self.depth += 1
         return self.depth
         
+    def maxDepth_a(self, root: 'Node'):
+        if root is None: return 0
+        if root.children == []: return 1
+        height = [self.maxDepth_a(node) for node in root.children]
+        return max(height) + 1
+        
 
 if __name__ == "__main__":
     pass
