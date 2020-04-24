@@ -17,5 +17,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-    pass        
-        
+    nums = [2, 4, 5, 3, 1]
+    res = sum(x * x for x in nums)
+    print(res)
