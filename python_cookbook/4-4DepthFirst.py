@@ -8,10 +8,13 @@ class Node:
         
     def add_child(self, node):
         self._children.append(node)
+    
+    def __iter__(self):
+        return iter(self._children)
         
     def depth_first(self):
         yield self
-        for c in self._children:
+        for c in self:
             yield from c.depth_first()
             
             
