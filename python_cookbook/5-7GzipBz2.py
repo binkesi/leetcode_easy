@@ -1,0 +1,16 @@
+import gzip, bz2
+
+if __name__ == "__main__":
+    # gzip compression
+    with gzip.open('somefile.gz', 'rt') as f:
+        text = f.read()
+    
+    # bz2 compression
+    with bz2.open('somefile.bz2', 'rt') as f:
+        text = f.read()
+        
+    with gzip.open('somefile.gz', 'wt') as f:
+        f.write(text)
+        
+    with bz2.open('somefile.bz2', 'wt') as f:
+        f.write(text)
