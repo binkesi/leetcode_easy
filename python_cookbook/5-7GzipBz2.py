@@ -14,3 +14,7 @@ if __name__ == "__main__":
         
     with bz2.open('somefile.bz2', 'wt') as f:
         f.write(text)
+        
+    f = open('somefile.gz', 'rb')
+    with gzip.open(f, 'rt') as g:
+        text = g.read()        
