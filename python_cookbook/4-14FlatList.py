@@ -1,7 +1,7 @@
 from collections import Iterable
-def flatten(mylist):
+def flatten(mylist, ignore_types=(str, bytes)):
     for item in mylist:
-        if isinstance(item, Iterable):
+        if isinstance(item, Iterable) and not isinstance(item, ignore_types):
             yield from flatten(item)
         else:
             yield item
