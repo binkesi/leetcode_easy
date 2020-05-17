@@ -1,4 +1,0 @@
-this is a python test.
-do you know python?
-it is a very interesting language.
-Let's try python.
