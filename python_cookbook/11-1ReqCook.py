@@ -17,3 +17,7 @@ if __name__ == "__main__":
     # 用作前后文管理器
     with requests.Session() as s:
         s.get('http://httpbin.org/cookies/set/sessioncookie/123456789')
+        
+    r = requests.get('http://httpbin.org/')
+    print(r.headers)
+    print(r.request.headers)
