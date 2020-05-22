@@ -1,4 +1,4 @@
-import pickle
+import json
 class RPCHandler:
     def __init__(self):
         self._functions = {}
@@ -9,12 +9,12 @@ class RPCHandler:
     def handler_connection(self, connection):
         try:
             while True:
-                func_name, args, kwargs = pickle.loads(connection.recv())
+                func_name, args, kwargs = json.loads(connection.recv())
                 try:
                     r = self._functions[func_name](*args, **kwargs)
-                    connection.send(pickle.dumps(r))
+                    connection.send(json.dumps(r))
                 except Exception as e:
-                    connection.send(pickle.dumps(e))
+                    connection.send(json.dumps(e))
         except EOFError:
             pass
             
