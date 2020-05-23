@@ -1,7 +1,7 @@
 # https://leetcode-cn.com/problems/can-place-flowers/submissions/
 
 class Solution:
-    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+    def canPlaceFlowers(self, flowerbed, n: int) -> bool:
         count_0 = 0
         count_n = 0
         for index, i in enumerate(flowerbed):           
